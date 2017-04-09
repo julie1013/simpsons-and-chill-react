@@ -9,7 +9,9 @@ export default class SearchResult extends Component {
         {this.props.season}
         {this.props.airdate}
         {this.props.description}
-        <div className="add-to-watchlist-btn">
+        <div className="add-to-watchlist-btn" onClick={()=>{
+          this.props.addToWatchListFunc(this.props.id)
+        }}>
           ADD TO WATCHLIST
         </div>
       </div>

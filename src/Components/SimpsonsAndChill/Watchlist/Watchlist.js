@@ -19,10 +19,12 @@ export default class Watchlist extends Component {
   }
 
   renderWatchlist(){
-    let watchList = this.state.watchList;
+    let watchList = this.props.watchList;
     return this.props.episodes.map((episode)=>{
       if(watchList.indexOf(episode.id)!== -1){
-        return <EpWatch title={episode.title}/>;
+        return <EpWatch title={episode.title}
+                        key={"episode " + episode.id}
+        />;
       } else {
         return false;
       }
@@ -32,7 +34,7 @@ export default class Watchlist extends Component {
   render(){
     return(
       <div className="watchlist">
-      {this.props.episodes && this.state.watchList
+      {this.props.episodes && this.props.watchList
         ? this.renderWatchlist()
         : null
       }

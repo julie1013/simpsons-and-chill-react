@@ -27,7 +27,11 @@ export default class Sidebar extends Component {
 
   renderResults(){
     return this.state.episodes.map((episode)=>{
-      return <SearchResult title={episode.title}
+      return <SearchResult
+                          key={"episode " + episode.id}
+                          addToWatchListFunc={this.props.addToWatchListFunc}
+                          id={episode.id}
+                          title={episode.title}
                           season={episode.season}
                           airdate={episode.airDate}
                           description={episode.description} />;
