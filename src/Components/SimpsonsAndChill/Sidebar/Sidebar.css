@@ -1,0 +1,6 @@
+.sidebar {
+  border: 1px solid black;
+  float: left;
+  height: 600px;
+  width: 20%;
+}

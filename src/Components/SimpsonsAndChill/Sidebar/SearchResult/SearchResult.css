@@ -1,0 +1,9 @@
+.search-result {
+  border: 1px solid black;
+  margin: auto;
+  width: 95%;
+}
+
+.add-to-watchlist-btn {
+  border: 1px solid black;
+}
