@@ -43,6 +43,12 @@ export default class Sidebar extends Component {
       <div className="sidebar">
         <Search searchFunc={this.handleSearch}/>
         { this.renderResults() }
+        {this.props.renderError
+          ? <div className="error">
+              <h1>YOU CANNOT ADD THAT, YOU TOOL!</h1>
+            </div>
+          : null
+        }
       </div>
     );
   }

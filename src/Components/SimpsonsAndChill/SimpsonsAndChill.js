@@ -23,23 +23,36 @@ export default class SimpsonsAndChill extends Component {
     })
     mockSimpsonsBackend.getWatchList()
     .then((response)=>{
-      this.setState({watchList: response.episode_ids})
+      this.setState({
+        watchList: response.episode_ids,
+        addError: undefined
+      })
     })
   }
 
   addToWatchList(id){
     mockSimpsonsBackend.addToWatchList(id)
     .then(()=>{
-      this.setState({
-        watchList: this.state.watchList.concat([id])
-      })
+        if((this.state.watchList).includes(id)){
+          this.setState({
+            addError: true
+          })
+      } else {
+        this.setState({
+          watchList: this.state.watchList.concat([id]),
+          addError: false
+        })
+      }
     })
+    debugger;
   }
 
   render () {
     return (
       <div className='simpsons-and-chill'>
-      <Sidebar addToWatchListFunc={this.addToWatchList}/>
+      <Sidebar addToWatchListFunc={this.addToWatchList}
+                renderError={this.state.addError}
+      />
       <Watchlist episodes={this.state.episodes}
                  watchList={this.state.watchList}
       />
