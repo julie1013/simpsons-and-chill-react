@@ -31,20 +31,17 @@ export default class SimpsonsAndChill extends Component {
   }
 
   addToWatchList(id){
-    mockSimpsonsBackend.addToWatchList(id)
-    .then(()=>{
-        if((this.state.watchList).includes(id)){
-          this.setState({
-            addError: true
-          })
-      } else {
-        this.setState({
-          watchList: this.state.watchList.concat([id]),
-          addError: false
-        })
-      }
-    })
-    debugger;
+    if((this.state.watchList).includes(id)){
+      this.setState({
+        addError: true
+      })
+    } else {
+      mockSimpsonsBackend.addToWatchList(id)
+      this.setState({
+        watchList: this.state.watchList.concat([id]),
+        addError: false
+      })
+    }
   }
 
   render () {
