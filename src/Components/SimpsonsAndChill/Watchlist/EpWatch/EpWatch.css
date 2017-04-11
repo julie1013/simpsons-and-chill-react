@@ -3,3 +3,8 @@
   margin: auto;
   width: 95%;
 }
+
+.remove-ep-btn {
+  border: 1px solid black;
+  float: left;
+}

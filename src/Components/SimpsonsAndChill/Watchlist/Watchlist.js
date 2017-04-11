@@ -24,6 +24,7 @@ export default class Watchlist extends Component {
       if(watchList.indexOf(episode.id)!== -1){
         return <EpWatch title={episode.title}
                         key={"episode " + episode.id}
+                        id={episode.id}
         />;
       } else {
         return false;

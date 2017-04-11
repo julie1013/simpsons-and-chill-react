@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import './SimpsonsAndChill.css'
-import { mockSimpsonsBackend } from '../mockSimpsonsBackend'
+import React, { Component } from 'react';
+import './SimpsonsAndChill.css';
+import { mockSimpsonsBackend } from '../mockSimpsonsBackend';
 import Sidebar from './Sidebar/Sidebar';
 import Watchlist from './Watchlist/Watchlist';
 
@@ -36,7 +36,7 @@ export default class SimpsonsAndChill extends Component {
         addError: true
       })
     } else {
-      mockSimpsonsBackend.addToWatchList(id)
+      mockSimpsonsBackend.addToWatchList(id);
       this.setState({
         watchList: this.state.watchList.concat([id]),
         addError: false
