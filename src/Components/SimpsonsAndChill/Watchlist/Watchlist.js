@@ -25,6 +25,7 @@ export default class Watchlist extends Component {
         return <EpWatch title={episode.title}
                         key={"episode " + episode.id}
                         id={episode.id}
+                        removeFromWatchListFunc={this.props.removeFromWatchListFunc}
         />;
       } else {
         return false;

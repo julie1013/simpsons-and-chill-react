@@ -14,6 +14,7 @@ export default class SimpsonsAndChill extends Component {
     }
     this.componentDidMount = this.componentDidMount.bind(this);
     this.addToWatchList = this.addToWatchList.bind(this);
+    this.removeFromWatchList = this.removeFromWatchList.bind(this);
   }
 
   componentDidMount(){
@@ -44,15 +45,25 @@ export default class SimpsonsAndChill extends Component {
     }
   }
 
+  removeFromWatchList(id) {
+    mockSimpsonsBackend.removeFromWatchList(id)
+    .then((response) => {
+      let indexToRemove = this.state.watchList.indexOf(id)
+      this.setState({
+        watchList: this.state.watchList.filter((_, i) => i !== indexToRemove)
+      })
+    });
+  }
+
   render () {
     return (
       <div className='simpsons-and-chill'>
       <Sidebar addToWatchListFunc={this.addToWatchList}
                 renderError={this.state.addError}
       />
-      <Watchlist episodes={this.state.episodes}
-                 watchList={this.state.watchList}
-      />
+      <Watchlist removeFromWatchListFunc={this.removeFromWatchList}
+                 episodes={this.state.episodes}
+                 watchList={this.state.watchList} />
       </div>
     )
   }
