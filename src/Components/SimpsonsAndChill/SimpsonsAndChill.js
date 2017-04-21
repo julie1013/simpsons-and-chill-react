@@ -39,7 +39,7 @@ export default class SimpsonsAndChill extends Component {
       return(
         <div className="error-window slideDown">
           <div className="message-background">
-            YOU CANNOT ADD THAT, YOU TOOL!
+            YOU HAVE ALREADY ADDED THAT, YOU TOOL!
             <div className="close-btn" onClick={()=>{
               this.closeError();
             }}>
