@@ -7,3 +7,10 @@
 .add-to-watchlist-btn {
   border: 1px solid black;
 }
+
+.season,
+.airdate,
+.synopsis-tag,
+.synopsis-summary {
+  text-align: left;
+}

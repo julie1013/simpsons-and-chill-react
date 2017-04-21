@@ -2,5 +2,7 @@
   border: 1px solid black;
   float: right;
   height: 600px;
+  margin-right: 25px;
+  margin-top: 50px;
   width: 75%;
 }
