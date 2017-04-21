@@ -10,11 +10,14 @@ export default class SimpsonsAndChill extends Component {
     mockSimpsonsBackend.init()
     this.state={
       episodes: [],
-      watchList: []
+      watchList: [],
+      addError: undefined
     }
     this.componentDidMount = this.componentDidMount.bind(this);
     this.addToWatchList = this.addToWatchList.bind(this);
     this.removeFromWatchList = this.removeFromWatchList.bind(this);
+    this.onAddError = this.onAddError.bind(this);
+    this.closeError = this.closeError.bind(this);
   }
 
   componentDidMount(){
@@ -28,6 +31,29 @@ export default class SimpsonsAndChill extends Component {
         watchList: response.episode_ids,
         addError: undefined
       })
+    })
+  }
+
+  onAddError(){
+    if(this.state.addError === true){
+      return(
+        <div className="error-window slideDown">
+          <div className="message-background">
+            YOU CANNOT ADD THAT, YOU TOOL!
+            <div className="close-btn" onClick={()=>{
+              this.closeError();
+            }}>
+              X
+            </div>
+          </div>
+        </div>
+      );
+    }
+  }
+
+  closeError(){
+    this.setState({
+      addError: !this.state.addError
     })
   }
 
@@ -59,7 +85,7 @@ export default class SimpsonsAndChill extends Component {
     return (
       <div className='simpsons-and-chill'>
       <Sidebar addToWatchListFunc={this.addToWatchList}
-                renderError={this.state.addError}
+                onAddErrorFunc={this.onAddError}
       />
       <Watchlist removeFromWatchListFunc={this.removeFromWatchList}
                  episodes={this.state.episodes}

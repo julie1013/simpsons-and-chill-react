@@ -40,16 +40,15 @@ export default class Sidebar extends Component {
 
   render(){
     return(
-      <div className="sidebar">
-        <Search searchFunc={this.handleSearch}/>
-        { this.renderResults() }
-        {this.props.renderError
-          ? <div className="error">
-              <h1>YOU CANNOT ADD THAT, YOU TOOL!</h1>
-            </div>
-          : null
-        }
+    <div>
+        <div className="sidebar">
+          <Search searchFunc={this.handleSearch}/>
+          { this.renderResults() }
+        </div>
+        <div>
+          { this.props.onAddErrorFunc() }
       </div>
+    </div>
     );
   }
 }
