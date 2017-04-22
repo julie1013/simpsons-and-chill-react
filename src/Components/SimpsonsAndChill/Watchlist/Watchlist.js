@@ -36,6 +36,7 @@ export default class Watchlist extends Component {
   render(){
     return(
       <div className="watchlist">
+        <h2>Watchlist</h2>
       {this.props.episodes && this.props.watchList
         ? this.renderWatchlist()
         : null
