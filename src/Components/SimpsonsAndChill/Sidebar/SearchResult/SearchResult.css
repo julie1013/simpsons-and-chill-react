@@ -1,16 +1,20 @@
 .search-result {
-  border: 1px solid black;
+  background: rgba(255, 255, 255, .8);
+  border: 1px solid #99ccff;
   margin: auto;
   width: 95%;
 }
 
 .add-to-watchlist-btn {
-  border: 1px solid black;
+  background: #ffffcc;
+  border: 1px solid #ffad33;
+  border-radius: 20px;
 }
 
 .season,
 .airdate,
 .synopsis-tag,
 .synopsis-summary {
+  margin-left: 5px;
   text-align: left;
 }

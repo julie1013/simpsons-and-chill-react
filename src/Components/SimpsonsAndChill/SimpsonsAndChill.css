@@ -1,3 +1,8 @@
+html,
+body {
+  background: url('../../../public/images/clouds.jpg');
+}
+
 .simpsons-and-chill {
   border: 1px solid black;
   height: 690px;

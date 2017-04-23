@@ -1,5 +1,6 @@
 .sidebar {
-  border: 1px solid black;
+  background: rgba(255, 255, 255, .5);
+  border: 3px solid #00b8e6;
   float: left;
   height: 600px;
   margin-left: 25px;
